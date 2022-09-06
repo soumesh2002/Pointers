@@ -1,13 +1,18 @@
 #include "pointer.h"
 
-void Increment(int* value)
+void Increment(int& value) // pass by reference
 {
-	(*value)++;
+	value++;
 }
 
 int main()
 {
 	int a = 5;
-	Increment(&a);
+	int b = 8;
+
+	int& ref = a;
+	ref = b;
+
+	Increment(a);
 	print(a);
 }
